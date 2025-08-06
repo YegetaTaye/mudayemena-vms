@@ -26,7 +26,11 @@ import {
   Stethoscope,
   BarChart3,
   RefreshCw,
-  Archive
+  Archive,
+  Plus,
+  Edit,
+  Trash2,
+  X
 } from 'lucide-react';
 
 interface AuditLogEntry {
@@ -88,7 +92,7 @@ const AuditLogsModule: React.FC = () => {
   const auditLogs: AuditLogEntry[] = [
     {
       id: '1',
-      timestamp: '2024-01-21T09:30:15.234Z',
+      timestamp: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString(), // 1 day ago
       userId: '1',
       userName: 'Dr. Sarah Johnson',
       userRole: 'Admin',
@@ -110,7 +114,7 @@ const AuditLogsModule: React.FC = () => {
     },
     {
       id: '2',
-      timestamp: '2024-01-21T08:15:42.567Z',
+      timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(), // 2 hours ago
       userId: '2',
       userName: 'Mike Chen',
       userRole: 'Staff',
@@ -126,7 +130,7 @@ const AuditLogsModule: React.FC = () => {
     },
     {
       id: '3',
-      timestamp: '2024-01-21T10:45:18.890Z',
+      timestamp: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(), // 3 days ago
       userId: '2',
       userName: 'Mike Chen',
       userRole: 'Staff',
@@ -148,7 +152,7 @@ const AuditLogsModule: React.FC = () => {
     },
     {
       id: '4',
-      timestamp: '2024-01-21T11:20:33.456Z',
+      timestamp: new Date(Date.now() - 4 * 60 * 60 * 1000).toISOString(), // 4 hours ago
       userId: '3',
       userName: 'Dr. Emily Watson',
       userRole: 'Vet',
@@ -165,7 +169,7 @@ const AuditLogsModule: React.FC = () => {
     },
     {
       id: '5',
-      timestamp: '2024-01-21T14:30:55.123Z',
+      timestamp: new Date(Date.now() - 1 * 60 * 60 * 1000).toISOString(), // 1 hour ago
       userId: '1',
       userName: 'Dr. Sarah Johnson',
       userRole: 'Admin',
@@ -186,7 +190,7 @@ const AuditLogsModule: React.FC = () => {
     },
     {
       id: '6',
-      timestamp: '2024-01-20T16:45:22.789Z',
+      timestamp: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(), // 2 days ago
       userId: '2',
       userName: 'Mike Chen',
       userRole: 'Staff',
@@ -202,7 +206,7 @@ const AuditLogsModule: React.FC = () => {
     },
     {
       id: '7',
-      timestamp: '2024-01-20T13:15:44.567Z',
+      timestamp: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(), // 5 days ago
       userId: '4',
       userName: 'James Wilson',
       userRole: 'Auditor',
@@ -219,7 +223,7 @@ const AuditLogsModule: React.FC = () => {
     },
     {
       id: '8',
-      timestamp: '2024-01-20T15:30:11.234Z',
+      timestamp: new Date(Date.now() - 6 * 24 * 60 * 60 * 1000).toISOString(), // 6 days ago
       userId: '2',
       userName: 'Mike Chen',
       userRole: 'Staff',
@@ -236,7 +240,7 @@ const AuditLogsModule: React.FC = () => {
     },
     {
       id: '9',
-      timestamp: '2024-01-19T11:00:33.890Z',
+      timestamp: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000).toISOString(), // 4 days ago
       userId: '1',
       userName: 'Dr. Sarah Johnson',
       userRole: 'Admin',
@@ -252,12 +256,12 @@ const AuditLogsModule: React.FC = () => {
       status: 'success',
       changes: [
         { field: 'status', oldValue: 'active', newValue: 'inactive' },
-        { field: 'deactivated_at', oldValue: '', newValue: '2024-01-19T11:00:33.890Z' }
+        { field: 'deactivated_at', oldValue: '', newValue: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000).toISOString() }
       ]
     },
     {
       id: '10',
-      timestamp: '2024-01-19T09:45:17.456Z',
+      timestamp: new Date(Date.now() - 30 * 60 * 1000).toISOString(), // 30 minutes ago
       userId: '3',
       userName: 'Dr. Emily Watson',
       userRole: 'Vet',

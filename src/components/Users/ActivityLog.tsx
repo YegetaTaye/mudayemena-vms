@@ -58,7 +58,7 @@ const ActivityLog: React.FC<ActivityLogProps> = ({ currentUser }) => {
       action: 'User Created',
       module: 'User Management',
       details: 'Created new user account for Mike Chen',
-      timestamp: '2024-01-21T09:30:00Z',
+      timestamp: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString(), // 1 day ago
       ipAddress: '192.168.1.100',
       userAgent: 'Chrome/120.0.0.0',
       severity: 'medium',
@@ -72,7 +72,7 @@ const ActivityLog: React.FC<ActivityLogProps> = ({ currentUser }) => {
       action: 'Login',
       module: 'Authentication',
       details: 'Successful login to system',
-      timestamp: '2024-01-21T08:15:00Z',
+      timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(), // 2 hours ago
       ipAddress: '192.168.1.101',
       userAgent: 'Chrome/120.0.0.0',
       severity: 'low',
@@ -86,7 +86,7 @@ const ActivityLog: React.FC<ActivityLogProps> = ({ currentUser }) => {
       action: 'GRN Created',
       module: 'GRN Management',
       details: 'Created GRN-2024-001 for VetMed Supplies Inc.',
-      timestamp: '2024-01-21T10:45:00Z',
+      timestamp: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(), // 3 days ago
       ipAddress: '192.168.1.101',
       userAgent: 'Chrome/120.0.0.0',
       severity: 'medium',
@@ -100,7 +100,7 @@ const ActivityLog: React.FC<ActivityLogProps> = ({ currentUser }) => {
       action: 'Inventory Access',
       module: 'Inventory Management',
       details: 'Viewed BIN card for Amoxicillin 500mg',
-      timestamp: '2024-01-21T11:20:00Z',
+      timestamp: new Date(Date.now() - 4 * 60 * 60 * 1000).toISOString(), // 4 hours ago
       ipAddress: '192.168.1.102',
       userAgent: 'Firefox/121.0.0.0',
       severity: 'low',
@@ -114,7 +114,7 @@ const ActivityLog: React.FC<ActivityLogProps> = ({ currentUser }) => {
       action: 'System Settings Modified',
       module: 'System Settings',
       details: 'Updated minimum stock level thresholds',
-      timestamp: '2024-01-21T14:30:00Z',
+      timestamp: new Date(Date.now() - 1 * 60 * 60 * 1000).toISOString(), // 1 hour ago
       ipAddress: '192.168.1.100',
       userAgent: 'Chrome/120.0.0.0',
       severity: 'high',
@@ -128,7 +128,7 @@ const ActivityLog: React.FC<ActivityLogProps> = ({ currentUser }) => {
       action: 'Failed Login Attempt',
       module: 'Authentication',
       details: 'Invalid password entered',
-      timestamp: '2024-01-20T16:45:00Z',
+      timestamp: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(), // 2 days ago
       ipAddress: '192.168.1.101',
       userAgent: 'Chrome/120.0.0.0',
       severity: 'medium',
@@ -142,7 +142,7 @@ const ActivityLog: React.FC<ActivityLogProps> = ({ currentUser }) => {
       action: 'Report Generated',
       module: 'Reports',
       details: 'Generated monthly inventory report',
-      timestamp: '2024-01-20T13:15:00Z',
+      timestamp: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(), // 5 days ago
       ipAddress: '192.168.1.103',
       userAgent: 'Edge/120.0.0.0',
       severity: 'low',
@@ -156,7 +156,7 @@ const ActivityLog: React.FC<ActivityLogProps> = ({ currentUser }) => {
       action: 'Delivery Note Created',
       module: 'Delivery Management',
       details: 'Created DN-2024-002 for City Animal Hospital',
-      timestamp: '2024-01-20T15:30:00Z',
+      timestamp: new Date(Date.now() - 6 * 24 * 60 * 60 * 1000).toISOString(), // 6 days ago
       ipAddress: '192.168.1.101',
       userAgent: 'Chrome/120.0.0.0',
       severity: 'medium',
@@ -170,7 +170,7 @@ const ActivityLog: React.FC<ActivityLogProps> = ({ currentUser }) => {
       action: 'User Status Changed',
       module: 'User Management',
       details: 'Deactivated user account for James Wilson',
-      timestamp: '2024-01-19T11:00:00Z',
+      timestamp: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000).toISOString(), // 4 days ago
       ipAddress: '192.168.1.100',
       userAgent: 'Chrome/120.0.0.0',
       severity: 'high',
@@ -184,7 +184,7 @@ const ActivityLog: React.FC<ActivityLogProps> = ({ currentUser }) => {
       action: 'Consultation Recorded',
       module: 'Consultations',
       details: 'Recorded consultation for patient ID: P-2024-156',
-      timestamp: '2024-01-19T09:45:00Z',
+      timestamp: new Date(Date.now() - 30 * 60 * 1000).toISOString(), // 30 minutes ago
       ipAddress: '192.168.1.102',
       userAgent: 'Firefox/121.0.0.0',
       severity: 'low',
