@@ -1,23 +1,16 @@
+import {
+  Bell,
+  Settings,
+  Shield,
+  User
+} from 'lucide-react';
 import React, { useState } from 'react';
 import { useUser } from '../../context/UserContext';
+import Toast from '../Common/Toast';
+import NotificationSettings from './NotificationSettings';
+import SecuritySettings from './SecuritySettings';
 import SystemSettings from './SystemSettings';
 import UserPreferences from './UserPreferences';
-import SecuritySettings from './SecuritySettings';
-import NotificationSettings from './NotificationSettings';
-import BackupSettings from './BackupSettings';
-import IntegrationSettings from './IntegrationSettings';
-import Button from '../Common/Button';
-import Toast from '../Common/Toast';
-import { 
-  Settings, 
-  User, 
-  Shield, 
-  Bell, 
-  Database, 
-  Plug,
-  Palette,
-  Globe
-} from 'lucide-react';
 
 type View = 'system' | 'preferences' | 'security' | 'notifications' | 'backup' | 'integrations';
 
@@ -153,33 +146,6 @@ const SettingsModule: React.FC = () => {
             </div>
           </button>
           
-          <button
-            onClick={() => setCurrentView('backup')}
-            className={`py-2 px-1 border-b-2 font-medium text-sm transition-colors ${
-              currentView === 'backup'
-                ? 'border-emerald-500 text-emerald-600'
-                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-            }`}
-          >
-            <div className="flex items-center space-x-2">
-              <Database className="h-4 w-4" />
-              <span>Backup</span>
-            </div>
-          </button>
-          
-          <button
-            onClick={() => setCurrentView('integrations')}
-            className={`py-2 px-1 border-b-2 font-medium text-sm transition-colors ${
-              currentView === 'integrations'
-                ? 'border-emerald-500 text-emerald-600'
-                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-            }`}
-          >
-            <div className="flex items-center space-x-2">
-              <Plug className="h-4 w-4" />
-              <span>Integrations</span>
-            </div>
-          </button>
         </nav>
       </div>
 
@@ -200,13 +166,6 @@ const SettingsModule: React.FC = () => {
         <NotificationSettings onShowToast={showToast} />
       )}
 
-      {currentView === 'backup' && (
-        <BackupSettings onShowToast={showToast} />
-      )}
-
-      {currentView === 'integrations' && (
-        <IntegrationSettings onShowToast={showToast} />
-      )}
 
       {/* Toast Notifications */}
       <Toast
